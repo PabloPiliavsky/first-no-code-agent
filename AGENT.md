@@ -20,9 +20,10 @@ Este proyecto es un entorno de desarrollo frontend basado en React y Vite, orque
 - `MEMORY.md`: Base de datos de conocimiento y aprendizajes a largo plazo compartida por todos los agentes.
 
 ## AI Workflow (Flujo de Trabajo)
-1. **Planificación (`01_PLANNER.md`)**: El Planificador recibe el requerimiento, analiza la base de código, consulta `MEMORY.md` y `skills/`, y escribe un plan secuencial detallado en `plans/`.
-2. **Ejecución (`workers/`)**: El agente ejecutor asignado (por ejemplo, `frontend`) toma un paso a la vez, escribe el código y tests necesarios exclusivamente dentro de `workspace/`.
+1. **Planificación (`01_PLANNER.md`)**: El Planificador recibe el requerimiento, analiza la base de código, consulta `MEMORY.md` y `skills/`, y escribe un plan secuencial detallado en `plans/`. **El plan debe ser presentado al usuario para su aprobación única inicial.**
+2. **Ejecución y Autonomía (`workers/`)**: Una vez que el usuario aprueba el plan, los agentes ejecutores (Workers) tienen **autorización y autonomía total** para realizar todas las modificaciones de código, creación de archivos y tests necesarios correspondientes a sus pasos asignados, **sin necesidad de pedir confirmación paso a paso al usuario**.
 3. **Síntesis (`02_SYNTHESIZER.md`)**: El Sintetizador revisa el código final, ejecuta la **compilación con `npm run build`** y verifica que no existan **errores de tipado o de compilación** (TypeScript/JavaScript) en el workspace, ejecutando pruebas QA y guardando el informe de integración en `workspace/reports/reporte_sintesis.md`.
+
 
 ## Normas de Comunicación y Formato de Respuesta
 Al finalizar cualquier tarea, los agentes deben responder al usuario usando la siguiente estructura en su chat/consola:

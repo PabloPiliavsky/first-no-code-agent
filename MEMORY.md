@@ -15,7 +15,7 @@ Este archivo contiene el contexto a largo plazo, decisiones de arquitectura y ap
 
 ## APRENDIZAJES Y ERRORES EVITADOS
 *Definición: Lecciones técnicas específicas de problemas de programación o configuración superados.*
-- *[Añadir dinámicamente nuevos aprendizajes aquí al completar una tarea: ej. errores de compilación solucionados, configuraciones especiales de Tailwind v4, etc.]*
+- **[2026-06-23 19:35] [Dependencias / Testing]**: Evitar usar versiones antiguas de `lucide-react` (como `^1.21.0`) que carecen de iconos modernos como `Instagram` y provocan componentes `undefined` en tiempo de ejecución. Además, se prefiere utilizar rutas de importación relativas en subcomponentes internos para garantizar la compatibilidad con el entorno de pruebas de Vitest sin depender exclusivamente de alias de ruta globales.
 
 ## GUÍA DE ACTUALIZACIÓN (Para Agentes)
 Cuando un agente termine una tarea compleja, descubra una solución no obvia, o resuelva un error recurrente:

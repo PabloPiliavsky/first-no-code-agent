@@ -16,7 +16,7 @@ Crear una landing page moderna, premium, responsiva y de alto impacto visual par
   - Botón secundario para chatear por WhatsApp.
 
 - **Sección Canchas e Interactividad**:
-  - Dibujo/diagrama interactivo de **3 rectángulos alineados vertical u horizontalmente** representando las canchas:
+  - Dibujo/diagrama interactivo de **3 rectángulos alineados** representando las canchas:
     - **Cancha 1**: "Panorámica Central"
     - **Cancha 2**: "Pista Azul"
     - **Cancha 3**: "Pista Pro"
@@ -43,4 +43,4 @@ Crear una landing page moderna, premium, responsiva y de alto impacto visual par
 - **Lenguaje**: Utilizar JavaScript y archivos `.js`/`.jsx` en el workspace.
 - **Estilos**: Tailwind CSS v4 para diseño fluido. Usar colores vibrantes pero armoniosos (tonos verde padel/neón, combinados con fondos oscuros elegantes o gris pizarra para dar sensación premium y nocturna). Componentes shadcn/ui.
 - **Modularidad**: Componentes individuales de max ~40 líneas, archivo principal max 100 líneas. Organizar en `src/features/padel/components/` y `src/shared/ui/`.
-- **Pruebas**: Crear un test básico persistente en `workspace/src/tests/` (por ejemplo, con Vitest o Jest si está configurado en el workspace) que valide que la página renderiza correctamente el título de "Padel Social".
+- **Pruebas**: Crear un test básico persistente en `workspace/src/tests/` que valide que la página renderiza correctamente el título de "Padel Social".

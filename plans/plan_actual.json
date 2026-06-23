@@ -1,0 +1,53 @@
+{
+  "pasos": [
+    {
+      "id": 1,
+      "titulo": "Inicializar el proyecto React con Vite y configurar dependencias",
+      "descripcion": "Crear una aplicación React en la carpeta workspace utilizando Vite e instalar dependencias esenciales como lucide-react y configurar Tailwind CSS v4 y vitest/jsdom para las pruebas.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/package.json"
+    },
+    {
+      "id": 2,
+      "titulo": "Configurar Tailwind CSS v4 y el sistema de diseño en index.css",
+      "descripcion": "Configurar Tailwind CSS v4 en workspace/src/index.css e integrar la paleta de colores Alternativa A (Verde Neón sobre fondo oscuro) usando variables CSS del tema y fuentes premium.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/src/index.css"
+    },
+    {
+      "id": 3,
+      "titulo": "Implementar componentes de interfaz compartidos (Shared UI)",
+      "descripcion": "Desarrollar componentes reutilizables como Button.jsx y Modal.jsx en workspace/src/shared/ui/ con estilos premium, efectos hover dinámicos y respetando el límite de 40 líneas.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/src/shared/ui/Button.jsx"
+    },
+    {
+      "id": 4,
+      "titulo": "Implementar Custom Hook para el estado de reserva y disponibilidad",
+      "descripcion": "Crear useBooking.js bajo workspace/src/features/padel/hooks/ para gestionar la selección de canchas, el estado de disponibilidad de turnos en tiempo real, y formatear el mensaje automático de reserva para WhatsApp.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/src/features/padel/hooks/useBooking.js"
+    },
+    {
+      "id": 5,
+      "titulo": "Implementar componentes específicos en sub-carpetas de features",
+      "descripcion": "Siguiendo la Alternativa 2, crear componentes estructurados en sub-directorios por contexto visual: HeroSection.jsx en components/hero/, CanchasSection.jsx en components/courts/, TurnosSection.jsx y ReservarTurnoModal.jsx en components/booking/, y TestimoniosSection.jsx en components/testimonials/.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/src/features/padel/components/courts/CanchasSection.jsx"
+    },
+    {
+      "id": 6,
+      "titulo": "Ensamblar e integrar la Landing Page completa en App.jsx",
+      "descripcion": "Modificar workspace/src/App.jsx integrando los subcomponentes estructurados (HeroSection, CanchasSection, TurnosSection y TestimoniosSection) en una estructura premium fluida y responsiva de menos de 100 líneas.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/src/App.jsx"
+    },
+    {
+      "id": 7,
+      "titulo": "Crear pruebas persistentes y ejecutables",
+      "descripcion": "Agregar en workspace/src/tests/padel.test.jsx una suite de pruebas con Vitest que verifique que el título de 'Padel Social' renderiza correctamente, interactúe con los botones y asegure la estabilidad del flujo.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/src/tests/padel.test.jsx"
+    }
+  ]
+}
