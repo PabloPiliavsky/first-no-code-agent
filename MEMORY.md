@@ -4,7 +4,7 @@ Este archivo contiene el contexto a largo plazo, decisiones de arquitectura y ap
 
 ## HECHOS VALIDADOS (FACTS)
 *Definición: Datos inmutables, estables y confirmados acerca del entorno y stack del proyecto.*
-- **Stack**: React 19, JavaScript / TypeScript, Vite 8, Tailwind CSS v4, shadcn/ui. El proyecto permite e incentiva el uso de archivos `.js`/`.jsx` para mayor simplicidad.
+- **Stack**: React 19, JavaScript / TypeScript, Vite 8, Tailwind CSS v4, shadcn/ui. Backend implementado con Node.js y Express. El proyecto permite e incentiva el uso de archivos `.js`/`.jsx` para mayor simplicidad.
 - **Preferencia del Usuario**: Respuestas concisas, desarrollo incremental paso a paso, y código modular auto-documentado sin comentarios redundantes.
 - **Estructura de Componentes**: Respetar estrictamente la estructura orientada a features en `workspace/src/`.
 

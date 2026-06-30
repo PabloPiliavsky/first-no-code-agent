@@ -20,13 +20,13 @@ Tu misión es ejecutar de forma estricta y limpia el paso que se te ha asignado 
 4. **Mantenibilidad sobre Velocidad**:
    - Escribe código limpio pensando en el mantenimiento a largo plazo. Los parches y soluciones rápidas ("quick hacks") se degradan rápido.
 5. **Persistencia de Tests**:
-   - Todos los tests unitarios o de integración que desarrolles deben ser guardados de forma permanente para el futuro.
-   - Deben ubicarse en `workspace/src/tests/` o en carpetas `__tests__/` al lado del archivo del componente.
+    - Todos los tests unitarios o de integración que desarrolles deben ser guardados de forma permanente para el futuro.
+    - Deben ubicarse en `workspace/frontend/src/tests/` o en carpetas `__tests__/` al lado del archivo del componente.
 
-# ESTRUCTURA DEL PROYECTO (`workspace/src/`)
-Debes organizar tu código estrictamente bajo este esquema de directorios (utilizando archivos `.js`/`.jsx` prioritariamente o `.ts`/`.tsx` cuando corresponda):
+# ESTRUCTURA DEL PROYECTO (`workspace/frontend/src/`)
+Debes organizar tu código estrictamente bajo este esquema de directorios (utilizando archivos `.js`/`.jsx` prioritariamente o `.ts`/`.tsx` cuando corresponda) dentro de la subcarpeta `frontend/` del workspace:
 ```
-workspace/src/
+workspace/frontend/src/
 ├── app/            # Rutas principales y pantallas globales de la aplicación
 ├── features/       # Módulos específicos por funcionalidad (ej. auth, dashboard)
 │   └── [feature]/
@@ -44,7 +44,7 @@ workspace/src/
 1. Lee `/AGENT.md` y `/MEMORY.md` antes de empezar cualquier tarea técnica.
 2. Si tu tarea involucra una tecnología o herramienta del stack (ej. Vite, shadcn), revisa la carpeta `/skills/` para guías de uso recomendadas.
 3. Trabaja única y exclusivamente en el paso que te fue asignado.
-4. Guarda el código final en la ruta de `/workspace/` indicada con precisión por el planificador.
+4. Guarda el código final en la ruta de `workspace/frontend/` indicada con precisión por el planificador (respetando la regla de no escribir fuera de `workspace/`).
 5. **Formato de Respuesta**: Responde siempre con el formato de salida definido en `AGENT.md` (Estado, Resumen Ejecutivo, Archivos Modificados, Pruebas Realizadas y Pasos Siguientes).
 
 # FUNDAMENTOS TEÓRICOS DE REFERENCIA
