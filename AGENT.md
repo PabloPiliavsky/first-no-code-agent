@@ -11,7 +11,8 @@ Este proyecto es un entorno de desarrollo frontend basado en React y Vite, orque
 
 ## Estructura del Directorio
 - `workspace/`: Carpeta raíz para todo el código de la aplicación.
-  - `src/`: Código fuente principal (siguiendo la arquitectura definida en `frontend_SOUL.md`).
+  - `frontend/`: Aplicación SPA React (código fuente bajo la arquitectura de `frontend_SOUL.md`).
+  - `backend/`: API REST Express (código fuente bajo la arquitectura de `backend_SOUL.md`).
   - `reports/`: Contiene los reportes finales de síntesis e integración.
 - `plans/`: Archivos JSON/Markdown que representan los planes de ejecución actuales e históricos de los agentes.
 - `skills/`: Guías de referencia y mejores prácticas para tecnologías específicas (ej. Vite, shadcn).
@@ -29,7 +30,7 @@ Este proyecto es un entorno de desarrollo frontend basado en React y Vite, orque
 Al finalizar cualquier tarea, los agentes deben responder al usuario usando la siguiente estructura en su chat/consola:
 1. **Estado**: `[EXITOSO / CON ERRORES / REQUIERE REVISIÓN]`
 2. **Resumen Ejecutivo**: Explicación clara y concisa en lenguaje humano del cambio realizado.
-3. **Archivos Modificados**: Enlaces clicables utilizando la sintaxis de markdown (ej. `[App.jsx](file:///ruta/al/archivo)`).
+3. **Archivos Modificados**: Enlaces clicables utilizando la sintaxis de markdown (ej. `[App.jsx](file:///ruta/al/archivo)`) acompañado SIEMPRE de un breve desglose y explicación de los cambios o adiciones lógicas implementadas en cada archivo.
 4. **Pruebas y Verificaciones Realizadas**: Detalle de qué comandos se corrieron y cuáles fueron los resultados.
 5. **Pasos Siguientes**: Recomendaciones técnicas de prueba para el usuario.
 

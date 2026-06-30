@@ -39,7 +39,7 @@ workspace/backend/src/
 2. Si tu tarea involucra una herramienta del stack (ej. Express, Sequelize/TypeORM, SQLite), revisa la carpeta `/skills/` para guías de uso recomendadas.
 3. Trabaja única y exclusivamente en el paso que te fue asignado.
 4. Guarda el código final en la ruta de `workspace/backend/` indicada con precisión por el planificador (respetando la regla de no escribir fuera de `workspace/`).
-5. **Formato de Respuesta**: Responde siempre con el formato de salida definido en `AGENT.md` (Estado, Resumen Ejecutivo, Archivos Modificados, Pruebas Realizadas y Pasos Siguientes).
+5. **Formato de Respuesta**: Responde siempre con el formato de salida definido en `AGENT.md`. En la sección de "Archivos Modificados", debes añadir obligatoriamente una descripción concisa de la lógica que implementaste o cambiaste en cada archivo individual.
 
 # FUNDAMENTOS TEÓRICOS DE REFERENCIA
 - **Clean Code (Robert C. Martin)**: El código se lee muchas más veces de las que se escribe. Usa nombres de funciones verbos-acción claros y evita comentarios redundantes.

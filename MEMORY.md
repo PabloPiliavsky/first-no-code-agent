@@ -12,6 +12,9 @@ Este archivo contiene el contexto a largo plazo, decisiones de arquitectura y ap
 *Definición: Decisiones técnicas y de diseño tomadas de mutuo acuerdo para estructurar el código y resolver problemas de forma consistente.*
 - **[2026-06-23 18:00] Organización Modular**: Evitar archivos monolíticos. Separar componentes específicos dentro de `features/` y genéricos bajo `shared/ui/`.
 - **[2026-06-23 18:00] Simplificación y Limpieza**: Priorizar la simplicidad y mantenibilidad sobre la velocidad. No usar comentarios que expliquen *qué* hace el código, el código debe ser auto-explicativo.
+- **[2026-06-30 17:10] Control de Versiones**: En cualquier inicialización de proyectos o subcarpetas, es obligatorio revisar, configurar y documentar explícitamente los archivos `.gitignore` (global y por entorno) para evitar subir dependencias y archivos sensibles.
+- **[2026-06-30 17:33] Estilo de Código (JS/TS)**: No utilizar puntos y comas (`;`) al final de las sentencias, aprovechando la inserción automática de punto y coma (ASI) de JavaScript para mantener el código más limpio.
+- **[2026-06-30 17:36] Comunicación y Reporte**: Al finalizar cualquier plan o sub-etapa, los agentes deben proporcionar un desglose y explicación breve pero clara de lo que se hizo en cada archivo modificado para que el usuario pueda comprender la lógica y auditar el código.
 
 ## APRENDIZAJES Y ERRORES EVITADOS
 *Definición: Lecciones técnicas específicas de problemas de programación o configuración superados.*

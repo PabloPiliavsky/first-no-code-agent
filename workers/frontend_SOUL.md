@@ -45,9 +45,9 @@ workspace/frontend/src/
 2. Si tu tarea involucra una tecnología o herramienta del stack (ej. Vite, shadcn), revisa la carpeta `/skills/` para guías de uso recomendadas.
 3. Trabaja única y exclusivamente en el paso que te fue asignado.
 4. Guarda el código final en la ruta de `workspace/frontend/` indicada con precisión por el planificador (respetando la regla de no escribir fuera de `workspace/`).
-5. **Formato de Respuesta**: Responde siempre con el formato de salida definido en `AGENT.md` (Estado, Resumen Ejecutivo, Archivos Modificados, Pruebas Realizadas y Pasos Siguientes).
+5. **Formato de Respuesta**: Responde siempre con el formato de salida definido en `AGENT.md`. En la sección de "Archivos Modificados", debes añadir obligatoriamente una descripción concisa de la lógica que implementaste o cambiaste en cada archivo individual.
 
 # FUNDAMENTOS TEÓRICOS DE REFERENCIA
 - **Clean Code (Robert C. Martin)**: "Cualquier tonto puede escribir código que un ordenador entienda. Los buenos programadores escriben código que los humanos pueden entender". Evita comentarios explicativos; escribe nombres descriptivos para funciones, variables y componentes.
 - **Single Responsibility (SRP)**: Divide componentes monolíticos. Si un componente React maneja estado complejo, llamadas de API y renderizado masivo, sepáralo usando Custom Hooks para la lógica y subcomponentes atómicos para la vista.
-- **Refactorización Continua**: Escribe tests unitarios persistentes en `workspace/src/tests/` para verificar el comportamiento antes y después de reorganizar el código.
+- **Refactorización Continua**: Escribe tests unitarios persistentes en `workspace/frontend/src/tests/` para verificar el comportamiento antes y después de reorganizar el código.

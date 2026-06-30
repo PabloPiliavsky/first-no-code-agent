@@ -1,0 +1,74 @@
+{
+  "pasos": [
+    {
+      "id": 1,
+      "titulo": "Inicializar package.json de backend, dependencias de DB y Testing",
+      "descripcion": "Crear package.json e instalar express, sequelize, sqlite3, cors, concurrently, dotenv, jsonwebtoken, bcryptjs, jest y supertest.",
+      "trabajador": "backend",
+      "archivo_salida_esperado": "workspace/backend/package.json"
+    },
+    {
+      "id": 2,
+      "titulo": "Inicializar SPA frontend con Vite, React, Tailwind v4 y Vitest",
+      "descripcion": "Inicializar el frontend React 19 con Vite 8 en workspace/frontend, configurar Vitest e importar Tailwind CSS v4.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/frontend/package.json"
+    },
+    {
+      "id": 3,
+      "titulo": "Crear script unificado run.sh para instalación y ejecución automática",
+      "descripcion": "Crear run.sh en la raíz del workspace para correr 'npm install' e iniciar de forma integrada frontend y backend.",
+      "trabajador": "backend",
+      "archivo_salida_esperado": "run.sh"
+    },
+    {
+      "id": 4,
+      "titulo": "Implementar Modelo User, Auth y Pruebas Unitarias de Backend",
+      "descripcion": "Crear el modelo User, endpoints de /api/auth/register y /api/auth/login usando JWT, y desarrollar tests de API con supertest.",
+      "trabajador": "backend",
+      "archivo_salida_esperado": "workspace/backend/src/routes/authRoutes.js"
+    },
+    {
+      "id": 5,
+      "titulo": "Implementar Pantallas de Login/Registro y Tests UI",
+      "descripcion": "Crear contexto de autenticación, pantallas de login/registro y escribir tests con Vitest para validar su funcionamiento visual.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/frontend/src/features/auth/components/LoginForm.jsx"
+    },
+    {
+      "id": 6,
+      "titulo": "Configurar Modelo Note con Relación a User y Base de Datos SQLite",
+      "descripcion": "Definir el modelo Note con relación de pertenencia a User (UserId) y configurar la inicialización automática de SQLite.",
+      "trabajador": "backend",
+      "archivo_salida_esperado": "workspace/backend/src/models/Note.js"
+    },
+    {
+      "id": 7,
+      "titulo": "Implementar endpoints REST de Notas Seguras y Pruebas de API",
+      "descripcion": "Crear middleware JWT y exponer endpoints CRUD de Notas limitando consultas al UserId del token, con tests correspondientes en supertest.",
+      "trabajador": "backend",
+      "archivo_salida_esperado": "workspace/backend/src/routes/noteRoutes.js"
+    },
+    {
+      "id": 8,
+      "titulo": "Desarrollar Interfaz de Notas e Integrar Tests",
+      "descripcion": "Crear panel para gestionar notas usando componentes atómicos, cabeceras de autorización JWT y pruebas unitarias de renderizado.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/frontend/src/app/App.jsx"
+    },
+    {
+      "id": 9,
+      "titulo": "Implementar Modelo Tag Normalizado y Relación con Notas (Fase 2)",
+      "descripcion": "Crear modelo Tag con restricción de unicidad de nombre global, tabla pivot NoteTags, y lógica de prevención de duplicación con tests asociados.",
+      "trabajador": "backend",
+      "archivo_salida_esperado": "workspace/backend/src/models/Tag.js"
+    },
+    {
+      "id": 10,
+      "titulo": "Integrar Selector de Tags Únicos y Filtros en el Frontend (Fase 2)",
+      "descripcion": "Crear selector en la creación/edición de notas que reutilice etiquetas existentes o cree nuevas sin duplicar caracteres, y filtros reactivos.",
+      "trabajador": "frontend",
+      "archivo_salida_esperado": "workspace/frontend/src/features/tags/components/TagFilter.jsx"
+    }
+  ]
+}

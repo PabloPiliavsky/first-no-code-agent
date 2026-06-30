@@ -1,0 +1,46 @@
+# Node modules globales o locales por error
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Configuraciones de entorno (evita subir credenciales o secretos)
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Base de datos SQLite (para que no se suban datos de prueba o producción)
+*.sqlite
+*.sqlite3
+*.db
+
+# Carpetas de distribución / compilación
+dist
+build
+.output
+
+# Archivos de sistema y editores
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos generados por el sistema de orquestación de agentes (opcional, si los quieres ocultar de git)
+# plans/
+# reports/
+
+# Pruebas y Tests (Opcional, según solicitud del usuario)
+__tests__/
+tests/
+*.test.js
+*.test.jsx
+*.spec.js
