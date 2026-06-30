@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 # run.sh - Script unificado para la instalación y ejecución paralela de la aplicación de Notas
 
 # Obtener ruta absoluta del directorio del script
