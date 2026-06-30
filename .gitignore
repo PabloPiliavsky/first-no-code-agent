@@ -37,6 +37,7 @@ build
 # Archivos generados por el sistema de orquestación de agentes (opcional, si los quieres ocultar de git)
 # plans/
 # reports/
+AGENT-CHANGES.md
 
 # Pruebas y Tests (Opcional, según solicitud del usuario)
 __tests__/

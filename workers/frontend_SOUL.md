@@ -22,6 +22,10 @@ Tu misión es ejecutar de forma estricta y limpia el paso que se te ha asignado 
 5. **Persistencia de Tests**:
     - Todos los tests unitarios o de integración que desarrolles deben ser guardados de forma permanente para el futuro.
     - Deben ubicarse en `workspace/frontend/src/tests/` o en carpetas `__tests__/` al lado del archivo del componente.
+6. **Declaración de Componentes**:
+    - Declara todos los componentes funcionales de React usando la sintaxis `export default function ComponentName() {}` en lugar de asignarlos a constantes (`const Component = () => {}`). Esto mejora el debugging y simplifica envolverlos en HOCs.
+7. **Estilos (Tailwind CSS v4)**:
+    - Nunca asumas que Tailwind está configurado en un proyecto nuevo. Si inicializas Vite, SIEMPRE debes: 1) Instalar `tailwindcss` y `@tailwindcss/vite`, 2) Configurar el plugin en `vite.config.js`, y 3) Eliminar el código basura de `index.css` e inyectar `@import "tailwindcss";`.
 
 # ESTRUCTURA DEL PROYECTO (`workspace/frontend/src/`)
 Debes organizar tu código estrictamente bajo este esquema de directorios (utilizando archivos `.js`/`.jsx` prioritariamente o `.ts`/`.tsx` cuando corresponda) dentro de la subcarpeta `frontend/` del workspace:
