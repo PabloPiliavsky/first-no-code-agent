@@ -1,5 +1,8 @@
 import app from './app.js'
 import sequelize from './config/database.js'
+import { setupAssociations } from './config/associations.js'
+
+setupAssociations()
 
 const PORT = process.env.PORT || 5000
 

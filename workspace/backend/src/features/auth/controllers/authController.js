@@ -1,8 +1,5 @@
-import express from 'express'
 import jwt from 'jsonwebtoken'
 import User from '../models/User.js'
-
-const router = express.Router()
 
 const generateToken = (id) => {
   if (!process.env.JWT_SECRET) {
@@ -13,8 +10,15 @@ const generateToken = (id) => {
   })
 }
 
-router.post('/register', async (req, res) => {
-  const { username, password } = req.body
+export const register = async (req, res) => {
+  let { username, password } = req.body
+  
+  if (!username || !password) {
+    return res.status(400).json({ message: 'Username and password are required' })
+  }
+  
+  // Sanitización de UX: Quitamos espacios extra
+  username = username.trim()
 
   try {
     const userExists = await User.findOne({ where: { username } })
@@ -33,10 +37,16 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message })
   }
-})
+}
 
-router.post('/login', async (req, res) => {
-  const { username, password } = req.body
+export const login = async (req, res) => {
+  let { username, password } = req.body
+  
+  if (!username || !password) {
+    return res.status(400).json({ message: 'Username and password are required' })
+  }
+  
+  username = username.trim()
 
   try {
     const user = await User.findOne({ where: { username } })
@@ -53,6 +63,4 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message })
   }
-})
-
-export default router
+}
