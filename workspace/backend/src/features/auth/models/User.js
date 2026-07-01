@@ -21,7 +21,6 @@ const User = sequelize.define('User', {
   }
 })
 
-// Add method to check password
 User.prototype.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password)
 }

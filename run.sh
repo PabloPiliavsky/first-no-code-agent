@@ -1,20 +1,20 @@
 #!/bin/bash
-# run.sh - Script unificado para la instalación y ejecución paralela de la aplicación de Notas
+# run.sh - Script for the installation and parallel execution of the Notes application
 
-# Obtener ruta absoluta del directorio del script
+# Get the absolute path of the script directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "=== Iniciando configuración de la aplicación ==="
+echo "=== Starting application configuration ==="
 
-# 1. Instalación de Dependencias
-echo "-> Instalando dependencias del Backend..."
+# 1. Installing Dependencies
+echo "-> Installing Backend dependencies..."
 cd "$DIR/workspace/backend" && npm install
 
-echo "-> Instalando dependencias del Frontend..."
+echo "-> Installing Frontend dependencies..."
 cd "$DIR/workspace/frontend" && npm install
 
-# 2. Inicialización de la Base de Datos y Ejecución Concurrente
-echo "-> Arrancando servidores..."
+# 2. Database Initialization and Concurrent Execution
+echo "-> Starting servers..."
 cd "$DIR/workspace/backend"
 npm run dev &
 BACKEND_PID=$!
@@ -23,8 +23,8 @@ cd "$DIR/workspace/frontend"
 npm run dev &
 FRONTEND_PID=$!
 
-# Capturar señales de salida para cerrar ambos servidores al terminar
+# Trap exit signals to close both servers
 trap "kill $BACKEND_PID $FRONTEND_PID" EXIT
 
-# Esperar a que los procesos finalicen
+# Wait for processes to finish
 wait

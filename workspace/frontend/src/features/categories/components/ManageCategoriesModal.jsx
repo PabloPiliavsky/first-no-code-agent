@@ -55,7 +55,6 @@ export default function ManageCategoriesModal({ onClose }) {
 
           <CategoryCreateForm onCreate={handleCreate} />
 
-          {/* List existing */}
           <div className="flex flex-col gap-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
             {loading ? (
               <p className="text-gray-400 text-center py-4">Loading tags...</p>
@@ -63,11 +62,11 @@ export default function ManageCategoriesModal({ onClose }) {
               <p className="text-gray-500 text-center py-4">No tags created yet.</p>
             ) : (
               categories.map(cat => (
-                <CategoryListItem 
-                  key={cat.id} 
-                  category={cat} 
-                  onSaveEdit={handleSaveEdit} 
-                  onDeleteClick={setDeletingCategory} 
+                <CategoryListItem
+                  key={cat.id}
+                  category={cat}
+                  onSaveEdit={handleSaveEdit}
+                  onDeleteClick={setDeletingCategory}
                 />
               ))
             )}
@@ -75,10 +74,10 @@ export default function ManageCategoriesModal({ onClose }) {
         </div>
       </Modal>
 
-      <CategoryDeleteModal 
-        category={deletingCategory} 
-        onConfirm={confirmDelete} 
-        onCancel={() => setDeletingCategory(null)} 
+      <CategoryDeleteModal
+        category={deletingCategory}
+        onConfirm={confirmDelete}
+        onCancel={() => setDeletingCategory(null)}
       />
     </>
   )

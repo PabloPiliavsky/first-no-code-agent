@@ -8,11 +8,9 @@ export default function TagAutocomplete({ value, onChange, label }) {
   const [isOpen, setIsOpen] = useState(false)
   const wrapperRef = useRef(null)
 
-  // Current tags array (derived from value string)
   const currentTags = value ? value.split(',').map(t => t.trim()).filter(Boolean) : []
 
-  // Filter available categories based on input and currently selected
-  const availableCategories = categories.filter(c => 
+  const availableCategories = categories.filter(c =>
     !currentTags.some(t => t.toLowerCase() === c.name.toLowerCase()) &&
     c.name.toLowerCase().includes(inputValue.toLowerCase())
   )
@@ -30,8 +28,7 @@ export default function TagAutocomplete({ value, onChange, label }) {
   const handleAddTag = (tagName) => {
     const trimmed = tagName.trim()
     if (!trimmed) return
-    
-    // Check if not already added
+
     if (!currentTags.some(t => t.toLowerCase() === trimmed.toLowerCase())) {
       const newTags = [...currentTags, trimmed]
       onChange(newTags.join(', '))
@@ -57,16 +54,16 @@ export default function TagAutocomplete({ value, onChange, label }) {
   return (
     <div className="w-full relative" ref={wrapperRef}>
       {label && <label className="block text-sm font-medium text-gray-300 mb-2">{label}</label>}
-      
-      <div 
+
+      <div
         className="min-h-[46px] w-full px-3 py-2 bg-black/20 border border-white/10 rounded-xl focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent transition-all flex flex-wrap gap-2 items-center"
         onClick={() => setIsOpen(true)}
       >
         {currentTags.map(tag => (
           <span key={tag} className="flex items-center gap-1 px-2 py-1 bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 rounded-lg text-sm">
             {tag}
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="text-indigo-400 hover:text-white"
               onClick={(e) => {
                 e.stopPropagation()
@@ -77,8 +74,8 @@ export default function TagAutocomplete({ value, onChange, label }) {
             </button>
           </span>
         ))}
-        
-        <input 
+
+        <input
           type="text"
           className="flex-1 bg-transparent border-none outline-none text-white min-w-[120px]"
           placeholder={currentTags.length === 0 ? "Search or create tags..." : ""}
@@ -109,7 +106,7 @@ export default function TagAutocomplete({ value, onChange, label }) {
               ))}
             </div>
           )}
-          
+
           {inputValue.trim() && !categories.some(c => c.name.toLowerCase() === inputValue.trim().toLowerCase()) && (
             <div className="p-2 border-t border-white/5">
               <button

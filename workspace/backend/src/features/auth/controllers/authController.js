@@ -12,12 +12,11 @@ const generateToken = (id) => {
 
 export const register = async (req, res) => {
   let { username, password } = req.body
-  
+
   if (!username || !password) {
     return res.status(400).json({ message: 'Username and password are required' })
   }
-  
-  // Sanitización de UX: Quitamos espacios extra
+
   username = username.trim()
 
   try {
@@ -41,11 +40,11 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   let { username, password } = req.body
-  
+
   if (!username || !password) {
     return res.status(400).json({ message: 'Username and password are required' })
   }
-  
+
   username = username.trim()
 
   try {
