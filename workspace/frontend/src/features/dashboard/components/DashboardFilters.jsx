@@ -1,11 +1,12 @@
-import { Plus } from 'lucide-react'
+import { Plus, Tags } from 'lucide-react'
 
 export default function DashboardFilters({ 
   showArchived, 
   setShowArchived, 
   activeNotesCount, 
   archivedNotesCount, 
-  onNewNote 
+  onNewNote,
+  onManageTags
 }) {
   return (
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
@@ -24,12 +25,21 @@ export default function DashboardFilters({
         </button>
       </div>
 
-      <button 
-        onClick={onNewNote}
-        className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-medium transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] active:scale-95 cursor-pointer"
-      >
-        <Plus size={18} /> New Note
-      </button>
+      <div className="flex gap-3">
+        <button 
+          onClick={onManageTags}
+          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-300 rounded-xl font-medium transition-all border border-white/10 active:scale-95 cursor-pointer"
+        >
+          <Tags size={18} /> Manage Tags
+        </button>
+
+        <button 
+          onClick={onNewNote}
+          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-medium transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] active:scale-95 cursor-pointer"
+        >
+          <Plus size={18} /> New Note
+        </button>
+      </div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { HStack } from '../../../shared/ui/HStack'
 import { Input } from '../../../shared/ui/Input'
 import { Button } from '../../../shared/ui/Button'
 import { Modal } from '../../../shared/ui/Modal'
+import TagAutocomplete from './TagAutocomplete'
 
 export default function NoteForm({ initialData = null, onSubmit, onClose }) {
   const [title, setTitle] = useState('')
@@ -67,11 +68,10 @@ export default function NoteForm({ initialData = null, onSubmit, onClose }) {
             />
           </div>
 
-          <Input 
-            label="Tags (comma separated)" 
-            placeholder="e.g. Work, Urgent, Ideas" 
+          <TagAutocomplete 
+            label="Tags" 
             value={categories} 
-            onChange={(e) => setCategories(e.target.value)}
+            onChange={(val) => setCategories(val)}
           />
           
           <HStack className="justify-end mt-4" gap="gap-3">

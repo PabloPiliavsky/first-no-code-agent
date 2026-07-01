@@ -5,11 +5,13 @@ import DashboardHeader from './DashboardHeader'
 import DashboardFilters from './DashboardFilters'
 import DashboardCategoryFilter from './DashboardCategoryFilter'
 import DashboardGrid from './DashboardGrid'
+import ManageCategoriesModal from '../../categories/components/ManageCategoriesModal'
 
 export default function Dashboard({ user, logout }) {
-  const { notes, loading, error, createNote, updateNote, deleteNote, archiveNote } = useNotes()
+  const { notes, loading, error, createNote, updateNote, deleteNote, archiveNote, refreshNotes } = useNotes()
   const [showArchived, setShowArchived] = useState(false)
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [isManageTagsOpen, setIsManageTagsOpen] = useState(false)
   const [editingNote, setEditingNote] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   
@@ -52,6 +54,7 @@ export default function Dashboard({ user, logout }) {
           activeNotesCount={activeNotes.length}
           archivedNotesCount={archivedNotes.length}
           onNewNote={() => setIsFormOpen(true)}
+          onManageTags={() => setIsManageTagsOpen(true)}
         />
 
         <DashboardCategoryFilter 
@@ -77,6 +80,13 @@ export default function Dashboard({ user, logout }) {
           onSubmit={handleCreateOrUpdate} 
           onClose={closeForm} 
         />
+      )}
+
+      {isManageTagsOpen && (
+        <ManageCategoriesModal onClose={() => {
+          setIsManageTagsOpen(false)
+          refreshNotes() // Refresh notes to pick up any category name changes or deletions
+        }} />
       )}
     </div>
   )
