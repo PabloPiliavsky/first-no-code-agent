@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNotes } from '../../notes/hooks/useNotes'
 import NoteForm from '../../notes/components/NoteForm'
 import DashboardHeader from './DashboardHeader'
@@ -24,6 +24,13 @@ export default function Dashboard({ user, logout }) {
     : baseNotes
 
   const allCategories = Array.from(new Set(baseNotes.flatMap(n => n.Categories?.map(c => c.name) || [])))
+
+  useEffect(() => {
+    if (selectedCategory && !allCategories.includes(selectedCategory)) {
+      setSelectedCategory(null)
+    }
+  }, [selectedCategory, showArchived, notes])
+
 
   const handleCreateOrUpdate = async (id, data) => {
     if (id) {
