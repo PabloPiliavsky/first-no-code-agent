@@ -67,13 +67,13 @@ export default function ManageCategoriesModal({ onClose }) {
         )}
 
         {/* Create new */}
-        <form onSubmit={handleCreate} className="flex gap-2">
+        <form onSubmit={handleCreate} className="flex gap-2 items-start">
           <Input 
             placeholder="New tag name..." 
             value={newCategoryName}
             onChange={(e) => setNewCategoryName(e.target.value)}
           />
-          <Button type="submit" variant="primary" className="mt-7">
+          <Button type="submit" variant="primary">
             <Plus size={18} /> Add
           </Button>
         </form>
