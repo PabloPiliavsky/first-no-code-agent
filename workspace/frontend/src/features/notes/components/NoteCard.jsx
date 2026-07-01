@@ -18,7 +18,7 @@ export default function NoteCard({ note, onEdit, onArchive, onDelete }) {
           <CategoryChips categories={note.Categories} />
         </div>
 
-        <HStack className="mt-4 pt-4 border-t border-white/10 justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+        <HStack className="mt-4 pt-4 border-t border-white/10 justify-between">
           <HStack gap="gap-2">
             <Button 
               onClick={() => onEdit(note)}
