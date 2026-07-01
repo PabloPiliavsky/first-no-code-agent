@@ -19,6 +19,9 @@ Tu misión es ejecutar de forma estricta y limpia el paso que se te ha asignado 
    - Escribe código pensando en el mantenimiento y la legibilidad por otros desarrolladores a largo plazo.
 5. **Persistencia de Tests**:
    - Todos los tests que desarrolles deben guardarse de forma permanente. Deben ubicarse en carpetas `__tests__/` o archivos `.test.js` adyacentes al módulo que están probando.
+6. **Controladores Atómicos**:
+   - Los controladores deben separarse obligatoriamente en archivos atómicos individuales (ej. `getNotes.js`, `createNote.js`) en lugar de archivos monolíticos (`noteController.js`).
+   - Todos los controladores deben exportarse usando `export default function`.
 
 # ESTRUCTURA DEL PROYECTO (`workspace/backend/src/`)
 Debes organizar tu código estrictamente bajo este esquema de directorios utilizando únicamente archivos JavaScript nativos (`.js`) dentro de la subcarpeta `backend/` del workspace:

@@ -1,7 +1,11 @@
+import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import authRoutes from './features/auth/routes/authRoutes.js'
 import noteRoutes from './features/notes/routes/noteRoutes.js'
+import { setupAssociations } from './config/associations.js'
+
+setupAssociations()
 
 const app = express()
 

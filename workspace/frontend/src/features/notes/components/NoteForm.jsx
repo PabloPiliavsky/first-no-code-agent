@@ -9,12 +9,16 @@ import { Modal } from '../../../shared/ui/Modal'
 export default function NoteForm({ initialData = null, onSubmit, onClose }) {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const [categories, setCategories] = useState('')
   const [error, setError] = useState(null)
 
   useEffect(() => {
     if (initialData) {
       setTitle(initialData.title)
       setContent(initialData.content)
+      if (initialData.Categories) {
+        setCategories(initialData.Categories.map(c => c.name).join(', '))
+      }
     }
   }, [initialData])
 
@@ -24,7 +28,7 @@ export default function NoteForm({ initialData = null, onSubmit, onClose }) {
     
     const result = await onSubmit(
       initialData ? initialData.id : null, 
-      { title, content }
+      { title, content, categories }
     )
     
     if (!result.success) {
@@ -62,6 +66,13 @@ export default function NoteForm({ initialData = null, onSubmit, onClose }) {
               onChange={(e) => setContent(e.target.value)}
             />
           </div>
+
+          <Input 
+            label="Tags (comma separated)" 
+            placeholder="e.g. Work, Urgent, Ideas" 
+            value={categories} 
+            onChange={(e) => setCategories(e.target.value)}
+          />
           
           <HStack className="justify-end mt-4" gap="gap-3">
             <Button type="button" variant="ghost" onClick={onClose}>
